@@ -1,0 +1,16 @@
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\bin\Debug\XpathChecker.exe.config
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\bin\Debug\XpathChecker.exe
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\bin\Debug\XpathChecker.pdb
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\bin\Debug\WebDriver.dll
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\bin\Debug\WebDriver.Support.dll
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\bin\Debug\WebDriver.xml
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\bin\Debug\WebDriver.Support.xml
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\obj\Debug\XpathChecker.csprojAssemblyReference.cache
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\obj\Debug\XpathChecker.Checker.resources
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\obj\Debug\XpathChecker.Form1.resources
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\obj\Debug\XpathChecker.Properties.Resources.resources
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\obj\Debug\XpathChecker.csproj.GenerateResource.cache
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\obj\Debug\XpathChecker.csproj.CoreCompileInputs.cache
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\obj\Debug\XpathChecker.csproj.CopyComplete
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\obj\Debug\XpathChecker.exe
+C:\Users\sbeck\source\repos\XpathChecker\XpathChecker\obj\Debug\XpathChecker.pdb
