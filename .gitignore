@@ -1,0 +1,9 @@
+HTMLTestReport/
+KeywordDrivenTestReports/
+CSVReports/
+target/
+/bin/
+.idea/
+*.iml
+*.project
+.vs/
