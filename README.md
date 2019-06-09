@@ -26,4 +26,4 @@ Windows can be switched to by clicking Get Windows, selecting the window title o
 Attributes of a specified element can be found by selecting the element from the list and clicking Attributes, this will open a new Dialog with ALL the attributes of the element.
 
 The Shutdown button will close the IEDriverServer and the Internet Explorer instance.
-The Reset Button will return you to the launcher.
+The Reset will return the count to 0, and clear the xpath information.
