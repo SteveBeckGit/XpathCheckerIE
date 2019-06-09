@@ -30,3 +30,4 @@ E:\xpathchecker\XpathChecker\obj\Debug\XpathChecker.csproj.CoreCompileInputs.cac
 E:\xpathchecker\XpathChecker\obj\Debug\XpathChecker.csproj.CopyComplete
 E:\xpathchecker\XpathChecker\obj\Debug\XpathChecker.exe
 E:\xpathchecker\XpathChecker\obj\Debug\XpathChecker.pdb
+E:\xpathchecker\XpathChecker\obj\Debug\XpathChecker.Attributes.resources

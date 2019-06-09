@@ -13,6 +13,7 @@ namespace XpathChecker
 {
     public partial class Checker : Form
     {
+        List<WebElement> listed = new List<WebElement>();
         public Checker(string url)
         {
             InitializeComponent();
@@ -28,22 +29,36 @@ namespace XpathChecker
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            
+            List<IWebElement> allElements = new List<IWebElement>();
             string xpath = xpathBox.Text;
 
             if (defaultBtn.Checked)
             {
-                List<IWebElement> elements = SeleniumFunctions.FindElements(xpath);
+                allElements = SeleniumFunctions.FindElements(xpath);
 
-                totalFound.Text = elements.Count.ToString();
+                totalFound.Text = allElements.Count.ToString();
             }
             else if (withinFramesBtn.Checked)
             {
-
+                allElements = SeleniumFunctions.findElementsWithinFrames(xpath);
+                totalFound.Text = allElements.Count.ToString();
             }
             else if (ignoreFrames.Checked)
             {
                 SeleniumFunctions.findElementsInFrames(xpath);
-                totalFound.Text = SeleniumFunctions.elementsFound.Count.ToString();
+                allElements = SeleniumFunctions.elementsFound;
+                totalFound.Text = allElements.Count.ToString();
+            }
+
+            foreach (IWebElement element in allElements)
+            {
+                listed.Add(new WebElement(element));
+            }
+
+            foreach (WebElement element in listed)
+            {
+                Elements.Items.Add(element.Name);
             }
            
         }
@@ -88,25 +103,33 @@ namespace XpathChecker
 
         private void SwitchWindow_Click(object sender, EventArgs e)
         {
-            string title = WindowList.SelectedItems[0].Text;
-            if (!SeleniumFunctions.SwitchWindows(title))
+            try
             {
-                string message = "Could not find / switch into window";
-                string caption = "Error Detected in Input";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
-
-                // Displays the MessageBox.
-                result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                string title = WindowList.SelectedItems[0].Text;
+                if (!SeleniumFunctions.SwitchWindows(title))
                 {
+                    string message = "Could not find / switch into window";
+                    string caption = "Error Detected in Input";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
 
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                    if (result == System.Windows.Forms.DialogResult.Yes)
+                    {
+
+                    }
+                }
+                else
+                {
+                    curWIndowLabel.Text = SeleniumFunctions.GetCurTitle();
                 }
             }
-            else
+            catch
             {
-                curWIndowLabel.Text = SeleniumFunctions.GetCurTitle();
+
             }
+            
         }
 
         private void GetWindows_Click(object sender, EventArgs e)
@@ -117,6 +140,19 @@ namespace XpathChecker
             {
                 WindowList.Items.Add(new ListViewItem().Text = window);
             }
+        }
+
+        private void ShutdownBtn_Click(object sender, EventArgs e)
+        {
+            SeleniumFunctions.Shutdown();
+            this.Close();
+        }
+
+        private void AttributesBtn_Click(object sender, EventArgs e)
+        {
+            WebElement element = listed.Where(x=>x.Name.Equals(Elements.Text)).First();
+            Attributes att = new Attributes(element);
+            att.Show();
         }
     }
 }

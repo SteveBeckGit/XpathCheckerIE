@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace XpathChecker
@@ -134,6 +135,8 @@ namespace XpathChecker
 
                 foreach (IWebElement frame in frames)
                 {
+                    string f = frame.GetAttribute("name");
+
                     Driver.SwitchTo().Frame(frame);
                     element = findElementInFrames(frame, xpath);
                     if (element != null)
@@ -167,6 +170,8 @@ namespace XpathChecker
                 List<IWebElement> frames = Driver.FindElements(By.XPath("//frame | //iframe")).ToList();
                 foreach (IWebElement curFrame in frames)
                 {
+                    string f = frame.GetAttribute("name");
+
                     Driver.SwitchTo().Frame(curFrame);
                     element = findElement(xpath);
                     if (element != null)
@@ -199,8 +204,10 @@ namespace XpathChecker
 
                 foreach (IWebElement frame in frames)
                 {
+                    string f = frame.GetAttribute("name");
+
                     Driver.SwitchTo().Frame(frame);
-                    findElementInFrames(frame, xpath);
+                    findElementsInFrames(frame, xpath);
                     
                     Driver.SwitchTo().ParentFrame();
                 }
@@ -210,6 +217,25 @@ namespace XpathChecker
             {
             }
 
+        }
+
+        public static List<IWebElement> findElementsWithinFrames(string framepath)
+        {
+            Driver.SwitchTo().DefaultContent();
+            Regex frameRegex = new Regex(@"\/?\/i?frame\[.*?]");
+            Match framesMatch = frameRegex.Match(framepath);
+            GroupCollection nodes = framesMatch.Groups;
+
+            foreach (Group node in nodes)
+            {
+                Driver.SwitchTo().Frame(Driver.FindElement(By.XPath(node.Value)));
+            }
+
+            string path = Regex.Replace(framepath, @"\/?\/i?frame\[.*?]", "");
+
+
+
+            return FindElements(path);
         }
 
         public static void findElementsInFrames(IWebElement frame, String xpath)
@@ -222,10 +248,12 @@ namespace XpathChecker
                 List<IWebElement> frames = Driver.FindElements(By.XPath("//frame | //iframe")).ToList();
                 foreach (IWebElement curFrame in frames)
                 {
+                    string f = frame.GetAttribute("name");
+
                     Driver.SwitchTo().Frame(curFrame);
                     elementsFound = elementsFound.Union(FindElements(xpath)).ToList();
-                    var ele = findElement(xpath);
-                    if (ele != null)
+                    var ele = findElements(xpath);
+                    if (ele.Count > 0)
                     {
                         string t = "";
                     }
@@ -240,7 +268,15 @@ namespace XpathChecker
 
 
         }
+
+        public static void Shutdown()
+        {
+            Driver.Close();
+            Driver.Quit();
+        }
+
     }
 
-        
+
+
 }

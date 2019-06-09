@@ -1,0 +1,17 @@
+E:\xpathchecker\XpathChecker\bin\Release\XpathChecker.exe.config
+E:\xpathchecker\XpathChecker\bin\Release\XpathChecker.exe
+E:\xpathchecker\XpathChecker\bin\Release\XpathChecker.pdb
+E:\xpathchecker\XpathChecker\bin\Release\WebDriver.dll
+E:\xpathchecker\XpathChecker\bin\Release\WebDriver.Support.dll
+E:\xpathchecker\XpathChecker\bin\Release\WebDriver.xml
+E:\xpathchecker\XpathChecker\bin\Release\WebDriver.Support.xml
+E:\xpathchecker\XpathChecker\obj\Release\XpathChecker.csprojAssemblyReference.cache
+E:\xpathchecker\XpathChecker\obj\Release\XpathChecker.Attributes.resources
+E:\xpathchecker\XpathChecker\obj\Release\XpathChecker.Checker.resources
+E:\xpathchecker\XpathChecker\obj\Release\XpathChecker.Form1.resources
+E:\xpathchecker\XpathChecker\obj\Release\XpathChecker.Properties.Resources.resources
+E:\xpathchecker\XpathChecker\obj\Release\XpathChecker.csproj.GenerateResource.cache
+E:\xpathchecker\XpathChecker\obj\Release\XpathChecker.csproj.CoreCompileInputs.cache
+E:\xpathchecker\XpathChecker\obj\Release\XpathChecker.csproj.CopyComplete
+E:\xpathchecker\XpathChecker\obj\Release\XpathChecker.exe
+E:\xpathchecker\XpathChecker\obj\Release\XpathChecker.pdb

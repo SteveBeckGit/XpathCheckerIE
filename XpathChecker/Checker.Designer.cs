@@ -43,6 +43,9 @@
             this.GetWindows = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.curWIndowLabel = new System.Windows.Forms.Label();
+            this.shutdownBtn = new System.Windows.Forms.Button();
+            this.Elements = new System.Windows.Forms.ListBox();
+            this.attributesBtn = new System.Windows.Forms.Button();
             this.SearchRules.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,10 +68,10 @@
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(588, 31);
+            this.searchBtn.Location = new System.Drawing.Point(595, 29);
             this.searchBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(143, 30);
+            this.searchBtn.Size = new System.Drawing.Size(124, 36);
             this.searchBtn.TabIndex = 2;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
@@ -95,10 +98,10 @@
             // 
             // resetBtn
             // 
-            this.resetBtn.Location = new System.Drawing.Point(595, 68);
+            this.resetBtn.Location = new System.Drawing.Point(739, 79);
             this.resetBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Size = new System.Drawing.Size(135, 36);
+            this.resetBtn.Size = new System.Drawing.Size(124, 38);
             this.resetBtn.TabIndex = 5;
             this.resetBtn.Text = "Reset";
             this.resetBtn.UseVisualStyleBackColor = true;
@@ -155,28 +158,28 @@
             // 
             this.WindowList.FullRowSelect = true;
             this.WindowList.GridLines = true;
-            this.WindowList.Location = new System.Drawing.Point(101, 246);
+            this.WindowList.Location = new System.Drawing.Point(465, 246);
             this.WindowList.Name = "WindowList";
-            this.WindowList.Size = new System.Drawing.Size(632, 127);
+            this.WindowList.Size = new System.Drawing.Size(268, 127);
             this.WindowList.TabIndex = 10;
             this.WindowList.UseCompatibleStateImageBehavior = false;
             this.WindowList.SelectedIndexChanged += new System.EventHandler(this.WindowList_SelectedIndexChanged);
             // 
             // switchWindow
             // 
-            this.switchWindow.Location = new System.Drawing.Point(741, 289);
+            this.switchWindow.Location = new System.Drawing.Point(739, 246);
             this.switchWindow.Name = "switchWindow";
-            this.switchWindow.Size = new System.Drawing.Size(115, 35);
+            this.switchWindow.Size = new System.Drawing.Size(124, 38);
             this.switchWindow.TabIndex = 11;
-            this.switchWindow.Text = "switch";
+            this.switchWindow.Text = "Switch";
             this.switchWindow.UseVisualStyleBackColor = true;
             this.switchWindow.Click += new System.EventHandler(this.SwitchWindow_Click);
             // 
             // GetWindows
             // 
-            this.GetWindows.Location = new System.Drawing.Point(739, 246);
+            this.GetWindows.Location = new System.Drawing.Point(739, 290);
             this.GetWindows.Name = "GetWindows";
-            this.GetWindows.Size = new System.Drawing.Size(116, 37);
+            this.GetWindows.Size = new System.Drawing.Size(124, 38);
             this.GetWindows.TabIndex = 12;
             this.GetWindows.Text = "Get Windows";
             this.GetWindows.UseVisualStyleBackColor = true;
@@ -185,7 +188,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(106, 214);
+            this.label3.Location = new System.Drawing.Point(461, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 20);
             this.label3.TabIndex = 13;
@@ -194,16 +197,48 @@
             // curWIndowLabel
             // 
             this.curWIndowLabel.AutoSize = true;
-            this.curWIndowLabel.Location = new System.Drawing.Point(245, 214);
+            this.curWIndowLabel.Location = new System.Drawing.Point(600, 210);
             this.curWIndowLabel.Name = "curWIndowLabel";
             this.curWIndowLabel.Size = new System.Drawing.Size(0, 20);
             this.curWIndowLabel.TabIndex = 14;
+            // 
+            // shutdownBtn
+            // 
+            this.shutdownBtn.Location = new System.Drawing.Point(739, 29);
+            this.shutdownBtn.Name = "shutdownBtn";
+            this.shutdownBtn.Size = new System.Drawing.Size(124, 38);
+            this.shutdownBtn.TabIndex = 15;
+            this.shutdownBtn.Text = "Shutdown";
+            this.shutdownBtn.UseVisualStyleBackColor = true;
+            this.shutdownBtn.Click += new System.EventHandler(this.ShutdownBtn_Click);
+            // 
+            // Elements
+            // 
+            this.Elements.FormattingEnabled = true;
+            this.Elements.ItemHeight = 20;
+            this.Elements.Location = new System.Drawing.Point(37, 250);
+            this.Elements.Name = "Elements";
+            this.Elements.Size = new System.Drawing.Size(273, 124);
+            this.Elements.TabIndex = 16;
+            // 
+            // attributesBtn
+            // 
+            this.attributesBtn.Location = new System.Drawing.Point(316, 250);
+            this.attributesBtn.Name = "attributesBtn";
+            this.attributesBtn.Size = new System.Drawing.Size(124, 38);
+            this.attributesBtn.TabIndex = 17;
+            this.attributesBtn.Text = "Attributes";
+            this.attributesBtn.UseVisualStyleBackColor = true;
+            this.attributesBtn.Click += new System.EventHandler(this.AttributesBtn_Click);
             // 
             // Checker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(881, 450);
+            this.Controls.Add(this.attributesBtn);
+            this.Controls.Add(this.Elements);
+            this.Controls.Add(this.shutdownBtn);
             this.Controls.Add(this.curWIndowLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.GetWindows);
@@ -244,5 +279,8 @@
         private System.Windows.Forms.Button GetWindows;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label curWIndowLabel;
+        private System.Windows.Forms.Button shutdownBtn;
+        private System.Windows.Forms.ListBox Elements;
+        private System.Windows.Forms.Button attributesBtn;
     }
 }
