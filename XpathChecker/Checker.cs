@@ -67,6 +67,7 @@ namespace XpathChecker
         {
             totalFound.Text = "0";
             xpathBox.Text = "";
+            Elements.Items.Clear();
         }
 
         private void Checker_Load(object sender, EventArgs e)
