@@ -29,7 +29,7 @@ namespace XpathChecker
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            
+            Elements.Items.Clear();
             List<IWebElement> allElements = new List<IWebElement>();
             string xpath = xpathBox.Text;
 

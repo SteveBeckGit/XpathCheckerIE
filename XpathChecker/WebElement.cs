@@ -19,12 +19,19 @@ namespace XpathChecker
 
         public Dictionary<string, object> GetAllAttributes(IWebElement element)
         {
-            IJavaScriptExecutor javascriptDriver = (IJavaScriptExecutor)SeleniumFunctions.Driver;
-            Dictionary<string, object> attributes = javascriptDriver
-                .ExecuteScript("var items = {}; for (index = 0; index < arguments[0].attributes.length; ++index) { items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value }; return items;",
-                element) as Dictionary<string, object>;
+            try
+            {
+                IJavaScriptExecutor javascriptDriver = (IJavaScriptExecutor)SeleniumFunctions.Driver;
+                Dictionary<string, object> attributes = javascriptDriver
+                    .ExecuteScript("var items = {}; for (index = 0; index < arguments[0].attributes.length; ++index) { items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value }; return items;",
+                    element) as Dictionary<string, object>;
 
-            return attributes;
+                return attributes;
+            } catch
+            {
+                return new Dictionary<string, object>();
+            }
+           
         }
     }
 }
